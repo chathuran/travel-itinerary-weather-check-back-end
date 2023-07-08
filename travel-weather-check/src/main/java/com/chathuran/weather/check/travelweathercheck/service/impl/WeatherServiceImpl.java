@@ -6,7 +6,7 @@ import com.chathuran.weather.check.travelweathercheck.model.CityId;
 import com.chathuran.weather.check.travelweathercheck.model.FavoriteCity;
 import com.chathuran.weather.check.travelweathercheck.model.Temperature;
 import com.chathuran.weather.check.travelweathercheck.resource.ForecastResource;
-import com.chathuran.weather.check.travelweathercheck.resource._ForecastListItem;
+import com.chathuran.weather.check.travelweathercheck.resource.ApiForecastListItem;
 import com.chathuran.weather.check.travelweathercheck.service.CityService;
 import com.chathuran.weather.check.travelweathercheck.service.FavoriteCityService;
 import com.chathuran.weather.check.travelweathercheck.service.TemperatureService;
@@ -79,7 +79,7 @@ public class WeatherServiceImpl implements WeatherService {
 
                 int indexSelectedCity = availableCities.indexOf(selectedCity);
                 /**
-                 * Return available forecast in data base
+                 * Return available forecast in dataBase
                  */
                 if (returnTemperatureList.size() > 0) {
                     ForecastResponse returnForecastResponse = new ForecastResponse();
@@ -187,7 +187,7 @@ public class WeatherServiceImpl implements WeatherService {
                 List<Temperature> returnTemperatureList = temperatureService.getAllFiveDayTemperatureListByCitiesWithinHour(selectedCity.getCityId().getCityName(), selectedCity.getCityId().getCountryCode(), afterTime);
 
                 /**
-                 * Return available forecast in data base
+                 * Return available forecast in dataBase
                  */
                 if (returnTemperatureList.size() > 0) {
 
@@ -239,7 +239,7 @@ public class WeatherServiceImpl implements WeatherService {
 
     ForecastResource getWeatherForecastFromAPIByCityNameNCountryCode(String cityNameNCountryCode) {
 
-        String url = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityNameNCountryCode + "&appid=47ae796f88a447c6ae2441abff043c11&units=metric";
+        String url = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityNameNCountryCode + "&appid=4f5219213e12b75d76c9bed6d0564aa9&units=metric";
         ResponseEntity<ForecastResource> responseEntity = null;
         ForecastResource returnForecastResource = new ForecastResource();
         try {
@@ -260,7 +260,7 @@ public class WeatherServiceImpl implements WeatherService {
      */
     List<Temperature> generateTempListFromForecastResource(ForecastResource forecastResource, City city) {
         List<Temperature> temperatureList = new ArrayList<>();
-        for (_ForecastListItem forecastItem :
+        for (ApiForecastListItem forecastItem :
                 forecastResource.getForecastListItemList()) {
 
             String[] forecastDateNTime = forecastItem.getDt_txt().split(" ");
