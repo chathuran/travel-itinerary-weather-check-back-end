@@ -37,7 +37,7 @@ public class CityServiceImpl implements CityService {
 
         return cityRepository.getAllCitiesByCityNameNCountryCode(cityNameNCountryCode.split(",")[0],cityNameNCountryCode.split(",")[1]);
     }
-
+//Test re-base in dev
     @Override
     public City isCityAvailable(CityId cityId) {
         return cityRepository.getById(cityId);
