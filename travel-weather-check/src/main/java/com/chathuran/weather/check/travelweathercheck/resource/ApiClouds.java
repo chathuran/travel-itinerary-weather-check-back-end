@@ -7,8 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class _Weather {
-    String main;
-    String description;
-    String icon;
+public class ApiClouds {
+    int all;
 }

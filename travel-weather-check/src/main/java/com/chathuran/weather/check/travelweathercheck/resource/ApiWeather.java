@@ -7,7 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class _City {
-    String name;
-    String country;
+public class ApiWeather {
+    String main;
+    String description;
+    String icon;
 }
