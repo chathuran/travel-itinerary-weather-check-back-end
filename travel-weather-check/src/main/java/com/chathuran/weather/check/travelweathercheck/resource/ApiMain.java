@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class _Clouds {
-    int all;
+public class ApiMain {
+    double temp;
 }

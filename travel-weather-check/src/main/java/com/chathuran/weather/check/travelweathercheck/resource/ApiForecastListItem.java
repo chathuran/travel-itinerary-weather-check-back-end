@@ -5,18 +5,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
-public class _ForecastListItem {
+public class ApiForecastListItem {
     @JsonProperty("main")
-    _Main main;
+    ApiMain main;
     @JsonProperty("weather")
-    List<_Weather> weather;
+    List<ApiWeather> weather;
     @JsonProperty("clouds")
-    _Clouds clouds;
+    ApiClouds clouds;
     String dt_txt;
 }
